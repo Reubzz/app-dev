@@ -5,7 +5,8 @@
 // BSD-style license that can be found in the LICENSE file.
 
 import 'package:flutter/material.dart';
-import '/movies/ui/pages/MovieListPage.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:mobile_app_dev/movies/ui/pages/MovieListPage.dart';
 import 'movies/data/datasource/fake_data.dart';
 import 'movies/data/models/movie_model.dart';
 
@@ -14,12 +15,16 @@ void main() => runApp(MyApp());
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return ProviderScope(
+      child: MaterialApp(
         title: 'Flutter Demo',
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
-          primarySwatch: Colors.orange,
+          primarySwatch: Colors.red,
         ),
-        home: MovieListPage(movies));
+        home: MovieListPage(),
+      ),
+    );
   }
 }
+
