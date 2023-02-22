@@ -48,5 +48,5 @@ class TruncatedDatasource extends MoviesDatasource {
 }
 
 var moviesDatasource = Provider(
-        (providerRef) => TruncatedDatasource()
+        (providerRef) => MockMovieDatasource()
 );
